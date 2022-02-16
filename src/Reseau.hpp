@@ -9,7 +9,9 @@ class Page;
 class Reseau {
     std::vector<Page*> vecPages;
     public:
+        Reseau();
         void inserer(Page* p);
+        friend bool operator==(Page &p1,Page &p2);
          
 };
 

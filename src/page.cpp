@@ -21,7 +21,6 @@ void Page::ajoutVoisine(std::vector<Page*> voisine)
 
 list <Page*> Page::chemin(Page* p)
 {
-
 }
 
 void Page::afficherChemin(list <Page*> chemin)
