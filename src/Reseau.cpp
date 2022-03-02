@@ -1,24 +1,38 @@
 #include<iostream>
 #include<string>
 #include "Reseau.hpp"
+#include <iterator>
 
 using namespace std;
 
-Reseau::Reseau()
-{
-    string choix;
-    cout<<"Entrez le nom de la page(stop pour arreter)"<<endl;
-    cin>>choix;
-    while(choix!="stop")
-    {
-        if(find(vecPages.begin(),vecPages.end(),choix))
-        {}
-        cout<<"Entrez le nom de la page(stop pour arreter)"<<endl;
-        cin>>choix;
-    }
-}
-
 bool operator==(Page &p1,Page &p2)
 {
-    return p1.nom==p2.nom;
+    return p1.getNom()==p2.getNom();
+}
+
+Reseau::Reseau()
+{
+    
+}
+
+void Reseau::inserer(Page* p)
+{
+    vecPages.insert(vecPages.end(), p);
+}
+
+ostream &operator<<(ostream &s, Reseau &r)
+{
+    s<<"Page :(";
+    for(Page* p1 : r.vecPages)
+    {
+        s<<*p1<<" ";
+    }
+    s<<" )"<<endl<<"Pages accesibles :"<<endl;
+
+    for(Page* p2 : r.vecPages)
+    {
+        p2->afficherVoisines();
+    }
+    
+    return s;
 }

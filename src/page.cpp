@@ -19,27 +19,37 @@ void Page::ajoutVoisine(std::vector<Page*> voisine)
 	pageVoisine=voisine;
 }
 
-list <Page*> Page::chemin(Page* p)
-{
-}
+
+// list <Page*> Page::chemin(Page* p)
+// {
+	
+// }
 
 void Page::afficherChemin(list <Page*> chemin)
 {
 	cout<<"Liste des pages accessibles : "<<endl;
 	for(Page* p: chemin)
 	{
-		p->afficherPage();
+		cout<<*this<<endl;
 	}
 }
 
 ostream & operator <<(ostream &s, Page &p)
 {
-	s<<p.getNom()<<endl;
+	s<<p.getNom();
 	return s;
 }
 
-void Page::afficherPage()
-{
-	cout<<*this<<endl;
-}
 
+
+
+void Page::afficherVoisines()
+{
+	cout<<nom<<" : {";
+	for(int it=0; it!=pageVoisine.size()-1; it++)
+	{
+		cout<<*pageVoisine[it]<<" ,";
+	}
+	int it2=pageVoisine.size();
+	cout<<*pageVoisine[it2]<<" }"<<endl;
+}

@@ -12,6 +12,7 @@ class Reseau {
         Reseau();
         void inserer(Page* p);
         friend bool operator==(Page &p1,Page &p2);
+        friend std::ostream &operator<<(std::ostream &s, Reseau &r);
          
 };
 
