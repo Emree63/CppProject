@@ -96,7 +96,7 @@ int main()
 	r1.inserer(&p12);
 	r1.inserer(&p13);
 
-	// cout<<r1<<endl;
+	cout<<r1<<endl;
 
 	p1.afficherVoisines();
 	

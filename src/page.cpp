@@ -46,10 +46,13 @@ ostream & operator <<(ostream &s, Page &p)
 void Page::afficherVoisines()
 {
 	cout<<nom<<" : {";
-	for(int it=0; it!=pageVoisine.size()-1; it++)
+	for(int it=0; it<pageVoisine.size(); it++)
 	{
-		cout<<*pageVoisine[it]<<" ,";
+		if(it!=pageVoisine.size()-1)
+			cout<<*pageVoisine[it]<<" ,";
+		else
+			cout<<*pageVoisine[it];
 	}
-	int it2=pageVoisine.size();
-	cout<<*pageVoisine[it2]<<" }"<<endl;
+
+	cout<<" }"<<endl;
 }
