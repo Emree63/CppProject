@@ -10,23 +10,30 @@ Page::Page(string nom): nom(nom){}
 Page::~Page(){}
 
 string Page::getNom()
-{
+{	
+	/**
+    * \fn getNom()
+    * \brief Getter qui renvoie le nom de la page.
+    *
+    * \return nom
+    */
 	return nom;
 }
 
-void Page::ajoutVoisine(std::vector<Page*> voisine)
-{
-	pageVoisine=voisine;
-}
-
-
 // list <Page*> Page::chemin(Page* p)
 // {
-	
+
 // }
 
 void Page::afficherChemin(list <Page*> chemin)
 {
+	 /**
+    * \fn afficherChemin(list <Page*> chemin)
+    * \brief Affiche tout les pages
+    *
+    * \param chemin 
+    * 
+    */
 	cout<<"Liste des pages accessibles : "<<endl;
 	for(Page* p: chemin)
 	{
@@ -36,23 +43,14 @@ void Page::afficherChemin(list <Page*> chemin)
 
 ostream & operator <<(ostream &s, Page &p)
 {
+	/**
+    * \fn operator <<(ostream &s, Page &p)
+    * \brief Operateur d'affichage de nom d'une page
+    *
+    * \param p Page
+    * 
+	* \return s
+    */
 	s<<p.getNom();
 	return s;
-}
-
-
-
-
-void Page::afficherVoisines()
-{
-	cout<<nom<<" : {";
-	for(int it=0; it<pageVoisine.size(); it++)
-	{
-		if(it!=pageVoisine.size()-1)
-			cout<<*pageVoisine[it]<<" ,";
-		else
-			cout<<*pageVoisine[it];
-	}
-
-	cout<<" }"<<endl;
 }
