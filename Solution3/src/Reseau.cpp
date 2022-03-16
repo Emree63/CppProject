@@ -19,8 +19,7 @@ bool operator==(Page &p1,Page &p2)
     return p1.getNom()==p2.getNom();
 }
 
-Reseau::Reseau()
-{ } 
+Reseau::Reseau(){} 
 
 void Reseau::inserer(Page* p)
 {
@@ -37,16 +36,13 @@ void Reseau::insererHyperliens(Page* p1,Page* p2, int num)
 {
     /**
     * \fn insererHyperliens(Page* p1,Page* p2)
-    * \brief Inserer un hyperliens dans la matrice du Réseau.
+    * \brief Inserer un hyperlien dans la matrice du Réseau.
     *
     * \param p1 Première Page.
     * \param p2 Deuxième Page.
     */
 
-    if (num == 1)
-        matrice[p1[p2]] = 1;
-    else
-        matrice[p1[p2]] = 0;   
+    matrice[p1->Page::numero][p2->Page::numero] = num;
 }
 
 ostream &operator<<(ostream &s, Reseau &r)
@@ -60,12 +56,48 @@ ostream &operator<<(ostream &s, Reseau &r)
     * 
     * \return s
     */
-
-    for (int i=0; i<r.pages.size(); i++)
+    int i, j;
+    for (i=0; i<r.matrice.size(); i++)
         s<<"(";
-        for(int j=0; j<r.pages.size(); j++)
-            s<<matrice[i[j]]<<" ";
+        for(j=0; j<r.matrice[i].size(); j++)
+            s<<r.matrice[i][j]<<" ";
         s<<")"<<endl;
     
     return s;
+}
+
+
+void Reseau::remplirTableau()
+{
+    vector<int> ligne;
+    for (Page* p1: pages) 
+        {
+            if (p1->trouvepagedanstableau()==true)
+                {
+                    ligne[]=0; //insert 0 ou 1 dans tableau
+                }
+        }
+
+
+
+}
+
+vector<std::vector<int> matrice;
+
+for(int i=0; i < pages.size(); i++){
+    vector<int> v1;
+}
+
+for (int j=0; j< pages.size(); j++){
+    v1.push_back()
+}
+
+
+bool Reseau::trouvepagedanstableau(Page* p1, Page* p2){
+    for( auto it= p1.pageVoisine.begin(); it!= p1.pageVoisine.begin(); it++)
+    {
+        if (*it==p2)
+            return true;
+    }
+    return false;
 }

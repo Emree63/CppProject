@@ -21,6 +21,45 @@ void testPage(){
 	// Page p12("foie.html");
 	// Page p13("réglisse.html");
 
+	std::list<Page*> pageVoisine1{&p2, &p3, &p4, &p7, &p10};
+	p1.ajoutVoisine(pageVoisine1);
+
+	std::list<Page*> pageVoisine2{&p3, &p5, &p8};
+	p2.ajoutVoisine(pageVoisine2);
+
+	std::list<Page*> pageVoisine3{&p1, &p6, &p9, &p11, &p12, &p13};
+	p3.ajoutVoisine(pageVoisine3);
+	
+	std::list<Page*> pageVoisine4{&p1, &p5, &p6, &p8, &p9};
+	p4.ajoutVoisine(pageVoisine4);
+
+	std::list<Page*> pageVoisine5{&p2};
+	p5.ajoutVoisine(pageVoisine5);
+
+	std::list<Page*> pageVoisine6{&p4, &p7};
+	p6.ajoutVoisine(pageVoisine6);
+	
+	std::list<Page*> pageVoisine7{&p6, &p8};
+	p7.ajoutVoisine(pageVoisine7);
+
+	std::list<Page*> pageVoisine8{&p2};
+	p8.ajoutVoisine(pageVoisine8);
+
+	std::list<Page*> pageVoisine9{&p4, &p10};
+	p9.ajoutVoisine(pageVoisine9);
+
+	std::list<Page*> pageVoisine10{&p1, &p5, &p9, &p11};
+	p10.ajoutVoisine(pageVoisine10);
+
+	std::list<Page*> pageVoisine11{&p10};
+	p11.ajoutVoisine(pageVoisine11);
+
+	std::list<Page*> pageVoisine12{};
+	p12.ajoutVoisine(pageVoisine12);
+	
+	std::list<Page*> pageVoisine13{};
+	p13.ajoutVoisine(pageVoisine13);
+
 }
 
 

@@ -3,16 +3,17 @@
 #include <string>
 #include <vector>
 #include <list>
- 
+
 class Page{
 	std::string nom;
-    static int numero;
+	std::vector<Page*> pageVoisine;
 public:
 	Page(std::string nom);
 	~Page();
 	std::string getNom();
-	std::list<Page*> chemin(Page* p);
+	void ajoutVoisine(std::vector<Page*> voisine);
 	void afficherChemin(std::list <Page*> chemin);
+	void afficherVoisines();
 	friend std::ostream & operator <<(std::ostream &s, Page &p);
 	friend bool operator==(Page &p1,Page &p2);
 };
