@@ -12,12 +12,12 @@ class Reseau {
     public:
         Reseau();
         void inserer(Page* p);
-        bool hyperlienDirect(Page* p)
+        void insererHyperliens(Page* p1,Page* p2, bool num);
         friend bool operator==(Page &p1,Page &p2);
         friend std::ostream &operator<<(std::ostream &s, Reseau &r);
-        void remplirMatrice();
 };
 
 #endif
 
 
+ 

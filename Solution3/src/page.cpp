@@ -9,7 +9,7 @@ int Page::numero=0;
 
 Page::Page(string nom): nom(nom){}
 
-Page::~Page(){}
+Page::~Page(){} 
 
 string Page::getNom()
 {	

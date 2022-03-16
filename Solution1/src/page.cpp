@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <string>
 #include "page.hpp"
 
@@ -20,7 +19,7 @@ string Page::getNom()
 	return nom;
 }
 
-void Page::ajoutVoisine(std::vector<Page*> voisine)
+void Page::ajoutVoisine(std::list<Page*> voisine)
 {
 	/**
     * \fn ajoutVoisine(std::vector<Page*> voisine)
@@ -29,28 +28,6 @@ void Page::ajoutVoisine(std::vector<Page*> voisine)
     * \param voisine Adresse de la page voisine.
     */
 	pageVoisine=voisine;
-}
-
-
-// list <Page*> Page::chemin(Page* p)
-// {
-	
-// }
-
-void Page::afficherChemin(list <Page*> chemin)
-{
-    /**
-    * \fn afficherChemin(list <Page*> chemin)
-    * \brief Affiche tout les pages
-    *
-    * \param chemin 
-    * 
-    */
-	cout<<"Liste des pages accessibles : "<<endl;
-	for(Page* p: chemin)
-	{
-		cout<<*this<<endl;
-	}
 }
 
 ostream & operator <<(ostream &s, Page &p)
@@ -67,8 +44,10 @@ ostream & operator <<(ostream &s, Page &p)
 	return s;
 }
 
-
-
+list<Page*> Page::getPVoisine()
+{
+    return pageVoisine;
+}
 
 void Page::afficherVoisines()
 {
@@ -77,14 +56,13 @@ void Page::afficherVoisines()
     * \brief Affiche toutes les voisines du page.
     * 
     */
-	cout<<nom<<" : {";
-	for(int it=0; it<pageVoisine.size(); it++)
-	{
-		if(it!=pageVoisine.size()-1)
-			cout<<*pageVoisine[it]<<" ,";
-		else
-			cout<<*pageVoisine[it];
-	}
 
-	cout<<" }"<<endl;
+    cout<<nom<<" : {";
+    for(Page *p : pageVoisine)
+    {   if(p==pageVoisine.back())
+            cout<<*p;
+        else
+            cout<<*p<<" ,";
+    }
+    cout<<" }"<<endl;
 }

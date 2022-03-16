@@ -2,7 +2,6 @@
 #include<string>
 #include "Reseau.hpp"
 #include <iterator>
-#include "pile.hpp"
 
 using namespace std;
 
@@ -21,7 +20,7 @@ bool operator==(Page &p1,Page &p2)
 }
 
 Reseau::Reseau()
-{ }
+{ } 
 
 void Reseau::inserer(Page* p)
 {
@@ -34,48 +33,39 @@ void Reseau::inserer(Page* p)
     pages.insert(pages.end(), p);
 }
 
-void Reseau::insererHyperliens(Page* p1,Page* p2)
+void Reseau::insererHyperliens(Page* p1,Page* p2, int num)
 {
     /**
     * \fn insererHyperliens(Page* p1,Page* p2)
-    * \brief Inserer un hyperliens dans la liste hyperliens du Réseau.
+    * \brief Inserer un hyperliens dans la matrice du Réseau.
     *
     * \param p1 Première Page.
     * \param p2 Deuxième Page.
     */
-    typedef pair <Page*, Page*> p;
-    hyperliens.insert ( p( p1, p2));
+
+    if (num == 1)
+        matrice[p1[p2]] = 1;
+    else
+        matrice[p1[p2]] = 0;   
 }
 
 ostream &operator<<(ostream &s, Reseau &r)
 {
     /**
     * \fn operator<<(ostream &s,Reseau &r)
-    * \brief Opérateur d'affichage du Réseau .
+    * \brief Opérateur d'affichage de la matrice .
     *
     * \param s 
     * \param r Reseau.
     * 
     * \return s
     */
-    int i = 0;
-    s<<"Page : {";
-    for(Page* p1 : r.pages)
-    {
-        s<<*p1<<" ";
-    }
-    s<<" }"<<endl;
 
-    s<<"Hyperliens : {";
-    for(pair<Page*, Page*> p2 : r.hyperliens)
-    {
-        if(i!=r.hyperliens.size()-1)
-			s<<"("<<*(p2.first)<<","<<*(p2.second)<<"),";
-		else
-			s<<"("<<*(p2.first)<<","<<*(p2.second)<<")";
-        i++;
-    }
-    s<<"}"<<endl;
+    for (int i=0; i<r.pages.size(); i++)
+        s<<"(";
+        for(int j=0; j<r.pages.size(); j++)
+            s<<matrice[i[j]]<<" ";
+        s<<")"<<endl;
     
     return s;
 }

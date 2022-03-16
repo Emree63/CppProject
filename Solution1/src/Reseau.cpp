@@ -1,7 +1,9 @@
 #include<iostream>
 #include<string>
 #include "Reseau.hpp"
+#include "pile.hpp"
 #include <iterator>
+#include <map>
 
 using namespace std;
 
@@ -35,6 +37,30 @@ void Reseau::inserer(Page* p)
     */
 
     vecPages.insert(vecPages.end(), p);
+}
+
+list<Page*> Reseau::Voisin(Page *p)
+{
+    return p->getPVoisine();
+}
+
+map <Page*,bool> Reseau::accessible(Page* p)
+{
+    Pile pile;
+    Page* tmp;
+    map <Page*,bool> page_visite;
+    pile.empiler(p);
+    while(!pile.estVide())
+    {
+        tmp=pile.depiler();
+        if (page_visite.find(tmp) == page_visite.end())
+            page_visite[tmp]=true;
+        list<Page*> voisinTmp = Voisin(tmp);
+        for(Page *voisin : voisinTmp)
+            if(page_visite.find(voisin) == page_visite.end())
+                pile.empiler(voisin);
+    }
+    return page_visite;
 }
 
 ostream &operator<<(ostream &s, Reseau &r)

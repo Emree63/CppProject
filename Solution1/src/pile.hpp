@@ -2,15 +2,17 @@
 #define PILE_HPP
 
 #include <list>
+#include "page.hpp"
  
 // Définition de la classe Pile
  
 class Pile
 {
     private:
-        list <Page*> liste;
+        std::list<Page*> liste;
     public:
         void empiler (Page* page);
-        void depiler ();
+        Page* depiler();
+        bool estVide();
 };
 #endif

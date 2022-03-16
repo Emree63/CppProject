@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include <list>
-
+ 
 class Page{
 	std::string nom;
     static int numero;
