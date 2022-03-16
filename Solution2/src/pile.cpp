@@ -9,11 +9,11 @@ void Pile::empiler (Page* page)
     liste.insert(liste.end(), page);
 }
 
-std::list<Page*>::iterator Pile::depiler ()
+Page* Pile::depiler ()
 {
-    std::list<Page*>::iterator it;
-    it = liste.erase(liste.end());
-    return it;
+    Page* p = liste.back();
+    liste.pop_back();
+    return p;
 }
 
 bool Pile::estVide(){

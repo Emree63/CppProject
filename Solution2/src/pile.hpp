@@ -12,7 +12,7 @@ class Pile
         std::list<Page*> liste;
     public:
         void empiler (Page* page);
-        std::list<Page*>::iterator depiler();
+        Page* depiler();
         bool estVide();
 };
 #endif

@@ -44,39 +44,52 @@ void Reseau::insererHyperliens(Page* p1,Page* p2)
     * \param p2 Deuxième Page.
     */
     typedef pair <Page*, Page*> p;
-    hyperliens.insert ( p( p1, p2));
+    hyperliens.insert( p( p1, p2));
 }
 
-void accessible(Page* p)
+list<Page*> Reseau::Voisin(Page *p)
+{
+    list<Page*> Voisin;
+    for(pair<Page*,Page*> it : hyperliens)
+    {
+        if(*p==*it.first)
+            Voisin.push_back(it.second);
+    }
+    return Voisin;
+}
+
+map <Page*,bool> Reseau::accessible(Page* p)
 {
     Pile pile;
-    std::list<Page*>::iterator tmp;
+    Page* tmp;
     map <Page*,bool> page_visite;
-    map <Page*,bool>:: iterator it;
     pile.empiler(p);
     while(!pile.estVide())
     {
         tmp=pile.depiler();
-        it = page_visite.find(tmp); // faire operateur == pour find 
-        if(it!=page_visite.end())
-            page_visite[it]=true;
-        
-        
-
+        if (page_visite.find(tmp) == page_visite.end())
+            page_visite[tmp]=true;
+        list<Page*> voisinTmp = Voisin(tmp);
+        for(Page *voisin : voisinTmp)
+            if(page_visite.find(voisin) == page_visite.end())
+                pile.empiler(voisin);
     }
+    return page_visite;
+    
 }
 
 ostream &operator<<(ostream &s, Reseau &r)
 {
     /**
     * \fn operator<<(ostream &s,Reseau &r)
-    * \brief Opérateur d'affichage du Réseau .
+    * \brief Opérateur d'affichage du Réseau
     *
     * \param s 
     * \param r Reseau.
     * 
     * \return s
     */
+
     int i = 0;
     s<<"Page : {";
     for(Page* p1 : r.pages)
@@ -84,7 +97,6 @@ ostream &operator<<(ostream &s, Reseau &r)
         s<<*p1<<" ";
     }
     s<<" }"<<endl;
-
     s<<"Hyperliens : {";
     for(pair<Page*, Page*> p2 : r.hyperliens)
     {

@@ -20,11 +20,6 @@ string Page::getNom()
 	return nom;
 }
 
-// list <Page*> Page::chemin(Page* p)
-// {
-
-// }
-
 void Page::afficherChemin(list <Page*> chemin)
 {
 	 /**
