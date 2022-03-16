@@ -64,5 +64,5 @@ void Page::afficherVoisines()
         else
             cout<<*p<<" ,";
     }
-    cout<<" }"<<endl;
+    cout<<"}"<<endl;
 }
