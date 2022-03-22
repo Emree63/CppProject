@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include "pile.hpp"
 #include "Reseau.hpp"
 #include <iterator>
 
@@ -30,6 +31,45 @@ void Reseau::inserer(Page* p)
     * \param p Page.
     */
     pages.insert(pages.end(), p);
+}
+
+list<Page*> Reseau::Voisin(Page *p){
+    /**
+    * \fn Voisin(Page *p)
+    * \brief Renvoie les pages voisines d'une page. .
+    *
+    * \param p Page.
+    * 
+    * \return p->getPageVoisine()
+    */
+
+    return p->getPageVoisine();
+}
+
+map <Page*,bool> Reseau::accessible(Page* p){
+    /**
+    * \fn accessible(Page* p)
+    * \brief Algorithme d'accessibilité depuis une page.
+    *
+    * \param p Page.
+    * 
+    * \return page_visite Map des pages accessible
+    */
+    Pile pile;
+    Page* tmp;
+    map <Page*,bool> page_visite;
+    pile.empiler(p);
+    while(!pile.estVide())
+    {
+        tmp=pile.depiler();
+        if (page_visite.find(tmp) == page_visite.end())
+            page_visite[tmp]=true;
+        list<Page*> voisinTmp = Voisin(tmp);
+        for(Page *voisin : voisinTmp)
+            if(page_visite.find(voisin) == page_visite.end())
+                pile.empiler(voisin);
+    }
+    return page_visite;
 }
 
 ostream &operator<<(ostream &s, Reseau &r)

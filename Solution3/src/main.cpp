@@ -69,5 +69,14 @@ int main()
 	r1.remplirMatrice();
 
     cout<<r1<<endl;
+
+	// Affichage des pages accessible à partir d'une page
+	map <Page*,bool> Accessible;
+	Accessible = r1.accessible(&p11);
+	for(pair<Page*,bool> p : Accessible)
+	{
+		cout<<*(p.first)<<" ";
+	}
+	cout<<endl;
     return 0;
 }

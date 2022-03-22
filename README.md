@@ -1,6 +1,6 @@
 # SAE 2.02
 
-git clone https://gitlab.iut-clermont.uca.fr/emkartal1/sae-1.02.git 
+git clone https://gitlab.iut-clermont.uca.fr//sae-1.02.git 
 (dans le dossier voulue)
 
 git add .  (ajouter les fichiers)

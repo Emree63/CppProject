@@ -1,5 +1,7 @@
 #ifndef RESEAU_HPP
 #define RESEAU_HPP
+#include<map>
+#include<list>
 #include<string>
 #include<vector>
 #include"page.hpp"
@@ -13,7 +15,8 @@ class Reseau {
     public:
         Reseau();
         void inserer(Page* p);
-        std::map <Page*,bool> accessible(Page* p);m);
+        std::map <Page*,bool> accessible(Page* p);
+        std::list<Page*> Voisin(Page *p);
         friend bool operator==(Page &p1,Page &p2);
         friend std::ostream &operator<<(std::ostream &s, Reseau &r);
         std::vector<int> remplirLigne(Page* p);
