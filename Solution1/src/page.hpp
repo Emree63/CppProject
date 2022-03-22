@@ -3,6 +3,7 @@
 #include <string>
 #include <list>
 
+// Definition de la classe Page
 class Page{
 	std::string nom;
 	std::list<Page*> pageVoisine;
@@ -14,6 +15,5 @@ public:
 	void ajoutVoisine(std::list<Page*> voisine);
 	void afficherVoisines();
 	friend std::ostream & operator <<(std::ostream &s, Page &p);
-	friend bool operator==(Page &p1,Page &p2);
 };
 #endif

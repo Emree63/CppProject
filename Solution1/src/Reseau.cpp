@@ -7,11 +7,16 @@
 
 using namespace std;
 
-Reseau::Reseau(){}
+Reseau::Reseau(){
+	/**
+    * \fn Reseau()
+    * \brief Constructeur d'un réseau.
+    */
+}
 
-void Reseau::inserer(Page* page){
+void Reseau::inserer(Page* p){
     /**
-    * \fn inserer(Page* page)
+    * \fn inserer(Page* p)
     * \brief Inserer une Page dans la liste du Réseau.
     *
     * \param p Page.
@@ -22,18 +27,27 @@ void Reseau::inserer(Page* page){
 
 list<Page*> Reseau::Voisin(Page *p){
     /**
-    * \fn operator<<(ostream &s,Reseau &r)
-    * \brief Opérateur d'affichage du Réseau .
+    * \fn Voisin(Page *p)
+    * \brief Renvoie les pages voisines d'une page. .
     *
-    * \param s 
-    * \param r Reseau.
+    * \param p Page.
     * 
-    * \return s
+    * \return p->getPVoisine()
     */
+
     return p->getPVoisine();
 }
 
 map <Page*,bool> Reseau::accessible(Page* p){
+    /**
+    * \fn accessible(Page* p)
+    * \brief Algorithme d'accessibilité depuis une page.
+    *
+    * \param p Page.
+    * 
+    * \return page_visite Map des pages accessible
+    */
+
     Pile pile;
     Page* tmp;
     map <Page*,bool> page_visite;
@@ -79,7 +93,10 @@ ostream &operator<<(ostream &s, Reseau &r){
     s<<"Page :{";
     for(Page* p1 : r.vecPages)
     {
-        s<<*p1<<",";
+        if(p1==r.vecPages.back())
+            s<<*p1;
+        else
+            s<<*p1<<" ,";
     }
     s<<" }"<<endl;
     s<<"Pages accesibles :"<<endl;

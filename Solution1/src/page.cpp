@@ -4,9 +4,21 @@
 
 using namespace std;
 
-Page::Page(string nom): nom(nom){}
+Page::Page(string nom): nom(nom){
+	/**
+    * \fn Page(string nom)
+    * \brief Constructeur d'une page.
+    *
+    * \param nom 
+    */
+}
 
-Page::~Page(){}
+Page::~Page(){
+	/**
+    * \fn ~Page()
+    * \brief Destructeur d'une page.
+    */
+}
 
 string Page::getNom(){
 	/**
@@ -24,7 +36,7 @@ void Page::ajoutVoisine(std::list<Page*> voisine){
     * \fn ajoutVoisine(std::vector<Page*> voisine)
     * \brief Ajouter une voisine le tableau de Page.
     *
-    * \param voisine Adresse de la page voisine.
+    * \param voisine liste de pages.
     */
 
 	pageVoisine=voisine;

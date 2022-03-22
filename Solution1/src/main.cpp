@@ -5,29 +5,9 @@
 
 using namespace std;
 
-void testPage()
-{
-	Page p1("recettes.html");
-	Page p2("ustencils.html");
-	Page p3("ingredients.html");
-	Page p4("tartePomme.html");
-	Page p5("plat.html");
-	Page p6("pomme.html");
-	Page p7("compote.html");
-	Page p8("économe.html");
-	Page p9("pateFeuilleté.html");
-	Page p10("tarteThon.html");
-	Page p11("thon.html");
-	Page p12("foie.html");
-	Page p13("réglisse.html");
-
-	cout<<p1<<endl;
-	
-}
-
 int main()
 {
-	// testPage();
+	// Construction des pages
 	Page p1("recettes.html");
 	Page p2("ustencils.html");
 	Page p3("ingredients.html");
@@ -42,6 +22,7 @@ int main()
 	Page p12("foie.html");
 	Page p13("réglisse.html");
 	
+	// Ajout des pages Voisine
 	std::list<Page*> pageVoisine1{&p2, &p3, &p4, &p7, &p10};
 	p1.ajoutVoisine(pageVoisine1);
 
@@ -81,6 +62,7 @@ int main()
 	std::list<Page*> pageVoisine13{};
 	p13.ajoutVoisine(pageVoisine13);
 
+	// Insertion des pages dans le réseau
 	Reseau r1;
 	r1.inserer(&p1);
 	r1.inserer(&p2);
@@ -96,8 +78,10 @@ int main()
 	r1.inserer(&p12);
 	r1.inserer(&p13);
 
+	// Affichage du réseau
 	cout<<r1<<endl;
 
+	// Affichage des pages accessible à partir d'une page
 	map <Page*,bool> Accessible;
 	Accessible = r1.accessible(&p13);
 	for(pair<Page*,bool> p : Accessible)

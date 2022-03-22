@@ -7,6 +7,7 @@
 
 class Page;
 
+// Definition de la classe Reseau
 class Reseau {
     std::vector<Page*> vecPages;
     public:

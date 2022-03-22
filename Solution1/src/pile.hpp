@@ -5,7 +5,6 @@
 #include "page.hpp"
  
 // Définition de la classe Pile
- 
 class Pile
 {
     private:
