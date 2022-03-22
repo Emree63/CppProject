@@ -6,13 +6,14 @@
 
 class Page;
 
+// Definition de la classe Reseau
 class Reseau {
     std::vector<Page*> pages;
     std::vector<std::vector <int> > matrice;
     public:
         Reseau();
         void inserer(Page* p);
-        // void insererHyperliens(Page* p1,Page* p2, int num);
+        std::map <Page*,bool> accessible(Page* p);m);
         friend bool operator==(Page &p1,Page &p2);
         friend std::ostream &operator<<(std::ostream &s, Reseau &r);
         std::vector<int> remplirLigne(Page* p);

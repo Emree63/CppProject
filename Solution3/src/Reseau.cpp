@@ -32,19 +32,6 @@ void Reseau::inserer(Page* p)
     pages.insert(pages.end(), p);
 }
 
-// void Reseau::insererHyperliens(Page* p1,Page* p2, int num)
-// {
-//     /**
-//     * \fn insererHyperliens(Page* p1,Page* p2)
-//     * \brief Inserer un hyperlien dans la matrice du Réseau.
-//     *
-//     * \param p1 Première Page.
-//     * \param p2 Deuxième Page.
-//     */
-
-//     matrice[p1->Page::numero][p2->Page::numero] = num;
-// }
-
 ostream &operator<<(ostream &s, Reseau &r)
 {
     /**
