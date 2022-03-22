@@ -15,7 +15,7 @@ class Reseau {
         void insererHyperliens(Page* p1,Page* p2, int num);
         friend bool operator==(Page &p1,Page &p2);
         friend std::ostream &operator<<(std::ostream &s, Reseau &r);
-};
+}; 
 
 #endif
 

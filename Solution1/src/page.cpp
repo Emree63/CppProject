@@ -8,30 +8,29 @@ Page::Page(string nom): nom(nom){}
 
 Page::~Page(){}
 
-string Page::getNom()
-{
+string Page::getNom(){
 	/**
     * \fn getNom()
     * \brief Getter qui renvoie le nom de la page.
     *
     * \return nom
     */
+
 	return nom;
 }
 
-void Page::ajoutVoisine(std::list<Page*> voisine)
-{
+void Page::ajoutVoisine(std::list<Page*> voisine){
 	/**
     * \fn ajoutVoisine(std::vector<Page*> voisine)
     * \brief Ajouter une voisine le tableau de Page.
     *
     * \param voisine Adresse de la page voisine.
     */
+
 	pageVoisine=voisine;
 }
 
-ostream & operator <<(ostream &s, Page &p)
-{
+ostream & operator <<(ostream &s, Page &p){
 	/**
     * \fn operator <<(ostream &s, Page &p)
     * \brief Operateur d'affichage de nom d'une page
@@ -40,21 +39,26 @@ ostream & operator <<(ostream &s, Page &p)
     * 
 	* \return s
     */
+
 	s<<p.getNom();
 	return s;
 }
 
-list<Page*> Page::getPVoisine()
-{
+list<Page*> Page::getPVoisine(){
+    /**
+    * \fn getPVoisine()
+    * \brief Renvoie la liste des pages directement accessible depuis la page.
+    * 
+	* \return s
+    */
+
     return pageVoisine;
 }
 
-void Page::afficherVoisines()
-{
+void Page::afficherVoisines(){
 	/**
     * \fn afficherVoisines()
     * \brief Affiche toutes les voisines du page.
-    * 
     */
 
     cout<<nom<<" : {";

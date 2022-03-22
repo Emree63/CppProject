@@ -17,7 +17,7 @@ bool operator==(Page &p1,Page &p2)
     * \return Un booléen vrai ou faux
     */
     return p1.getNom()==p2.getNom();
-}
+} 
 
 Reseau::Reseau(){} 
 
@@ -67,33 +67,30 @@ ostream &operator<<(ostream &s, Reseau &r)
 }
 
 
-void Reseau::remplirTableau()
+vector<int> Reseau::remplirLigne(Page* p)
 {
     vector<int> ligne;
     for (Page* p1: pages) 
         {
-            if (p1->trouvepagedanstableau()==true)
+            if (trouverdanspagevoisine(Page* p, Page* p1)==true)
                 {
-                    ligne[]=0; //insert 0 ou 1 dans tableau
+                    ligne.push_back(1);
                 }
+            else ligne.push_back(0);
         }
-
-
+    return ligne;
 
 }
 
-vector<std::vector<int> matrice;
 
-for(int i=0; i < pages.size(); i++){
-    vector<int> v1;
+void Reseau::remplirMatrice() {
+    for(Page* p: pages)
+    {
+        matrice.push_back(remplirLigne(p));
+    }
 }
 
-for (int j=0; j< pages.size(); j++){
-    v1.push_back()
-}
-
-
-bool Reseau::trouvepagedanstableau(Page* p1, Page* p2){
+bool Reseau::trouverdanspagevoisine(Page* p1, Page* p2){
     for( auto it= p1.pageVoisine.begin(); it!= p1.pageVoisine.begin(); it++)
     {
         if (*it==p2)

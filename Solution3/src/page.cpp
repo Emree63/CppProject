@@ -30,7 +30,7 @@ void Page::ajoutVoisine(std::vector<Page*> voisine)
     */
     pageVoisine=voisine;
 }
-
+ 
 ostream & operator <<(ostream &s, Page &p)
 {
     /**

@@ -7,30 +7,11 @@
 
 using namespace std;
 
-bool operator==(Page &p1,Page &p2)
-{
-    /**
-    * \fn operator==(Page &p1,Page &p2)
-    * \brief Comparaison entre deux pages
-    *
-    * \param p1 Première Page.
-    * \param p2 Deuxième Page.
-    * 
-    * \return Un booléen vrai ou faux
-    */
-   
-    return p1.getNom()==p2.getNom();
-}
+Reseau::Reseau(){}
 
-Reseau::Reseau()
-{
-    
-}
-
-void Reseau::inserer(Page* p)
-{
+void Reseau::inserer(Page* page){
     /**
-    * \fn inserer(Page* p)
+    * \fn inserer(Page* page)
     * \brief Inserer une Page dans la liste du Réseau.
     *
     * \param p Page.
@@ -39,13 +20,20 @@ void Reseau::inserer(Page* p)
     vecPages.insert(vecPages.end(), p);
 }
 
-list<Page*> Reseau::Voisin(Page *p)
-{
+list<Page*> Reseau::Voisin(Page *p){
+    /**
+    * \fn operator<<(ostream &s,Reseau &r)
+    * \brief Opérateur d'affichage du Réseau .
+    *
+    * \param s 
+    * \param r Reseau.
+    * 
+    * \return s
+    */
     return p->getPVoisine();
 }
 
-map <Page*,bool> Reseau::accessible(Page* p)
-{
+map <Page*,bool> Reseau::accessible(Page* p){
     Pile pile;
     Page* tmp;
     map <Page*,bool> page_visite;
@@ -63,8 +51,21 @@ map <Page*,bool> Reseau::accessible(Page* p)
     return page_visite;
 }
 
-ostream &operator<<(ostream &s, Reseau &r)
-{
+bool operator==(Page &p1,Page &p2){
+    /**
+    * \fn operator==(Page &p1,Page &p2)
+    * \brief Comparaison entre deux pages
+    *
+    * \param p1 Première Page.
+    * \param p2 Deuxième Page.
+    * 
+    * \return Un booléen vrai ou faux
+    */
+   
+    return p1.getNom()==p2.getNom();
+}
+
+ostream &operator<<(ostream &s, Reseau &r){
     /**
     * \fn operator<<(ostream &s,Reseau &r)
     * \brief Opérateur d'affichage du Réseau .
