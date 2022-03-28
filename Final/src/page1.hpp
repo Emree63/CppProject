@@ -2,6 +2,7 @@
 #define PAGE1_HPP
 #include "pageMere.hpp"
 
+// Definition de la classe Page Solution 1
 class Page1 : public PageMere{
 	std::list<PageMere*> pageVoisine;
     public:

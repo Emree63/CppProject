@@ -3,6 +3,7 @@
 #include <string>
 #include <list>
 
+// Definition de la classe Page Mère
 class PageMere{
     public:
         std::string nom;

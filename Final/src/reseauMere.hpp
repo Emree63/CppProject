@@ -9,7 +9,7 @@
 
 class PageMere;
 
-// Definition de la classe Reseau
+// Definition de la classe Reseau Mère
 class ReseauMere{
     public:
         std::vector<PageMere*> pages;

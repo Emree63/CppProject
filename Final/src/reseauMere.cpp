@@ -2,21 +2,27 @@
 using namespace std;
 
 ReseauMere::ReseauMere(){
-
+	/**
+    * \fn ReseauMere()
+    * \brief Constructeur d'un réseau
+    */
 }
 
 ReseauMere::~ReseauMere(){
-
+	/**
+    * \fn ~ReseauMere()
+    * \brief Destructeur d'un réseau
+    */
 }
 
 map<PageMere*,bool> ReseauMere::accessible(PageMere* p){
     /**
-    * \fn accessible(Page* p)
-    * \brief Algorithme d'accessibilité depuis une page.
+    * \fn accessible(PageMere* p)
+    * \brief Algorithme d'accessibilité depuis une page
     *
-    * \param p Page.
+    * \param p
     * 
-    * \return page_visite Map des pages accessible
+    * \return page_visite
     */
 
     Pile pile;

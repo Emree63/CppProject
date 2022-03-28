@@ -1,8 +1,8 @@
 #ifndef RESEAU2_HPP
 #define RESEAU2_HPP
 #include "reseauMere.hpp"
-#include "page2.hpp"
 
+// Definition de la classe Reseau Solution 2
 class Reseau2 : public ReseauMere{
     std::multimap<PageMere*, PageMere*> hyperliens;
     public:

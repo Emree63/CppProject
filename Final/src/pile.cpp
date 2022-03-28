@@ -5,10 +5,10 @@
  
 void Pile::empiler(PageMere* page){
     /**
-    * \fn empiler (Page* page)
-    * \brief Empile une page dans une pile.
+    * \fn empiler (PageMere* page)
+    * \brief Empile une page dans une pile
     *
-    * \param page Adresse de la page à empiler.
+    * \param page Adresse de la page à empiler
     */
 
     liste.insert(liste.end(), page);
@@ -16,8 +16,8 @@ void Pile::empiler(PageMere* page){
 
 PageMere* Pile::depiler(){
     /**
-    * \fn depiler ()
-    * \brief Dépile une page dans une pile et renvoie la page dépiler.
+    * \fn depiler()
+    * \brief Dépile une page dans une pile et renvoie la page dépiler
     *
     * \return page
     */
@@ -30,9 +30,9 @@ PageMere* Pile::depiler(){
 bool Pile::estVide(){
     /**
     * \fn estVide()
-    * \brief Teste si la pile est vide.
+    * \brief Teste si la pile est vide
     *
-    * \return true ou false
+    * \return Un booléen vrai ou faux
     */
 
     if(liste.size()==0)

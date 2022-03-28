@@ -1,8 +1,8 @@
 #ifndef RESEAU3_HPP
 #define RESEAU3_HPP
 #include "reseauMere.hpp"
-#include "page3.hpp"
 
+// Definition de la classe Reseau Solution 3
 class Reseau3 : public ReseauMere{
     std::vector<std::vector <int>> matrice;
     public:

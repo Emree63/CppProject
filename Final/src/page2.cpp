@@ -4,8 +4,8 @@ using namespace std;
 
 Page2::Page2(string nom): PageMere(nom){
 	/**
-    * \fn Page(string nom)
-    * \brief Constructeur d'une page.
+    * \fn Page2(string nom)
+    * \brief Constructeur d'une page
     *
     * \param nom
     */
@@ -13,15 +13,15 @@ Page2::Page2(string nom): PageMere(nom){
 
 Page2::~Page2(){
 	/**
-    * \fn ~Page()
-    * \brief Destructeur d'une page.
+    * \fn ~Page2()
+    * \brief Destructeur d'une page
     */
 }
 
 string Page2::getNom(){	
 	/**
     * \fn getNom()
-    * \brief Getter qui renvoie le nom de la page.
+    * \brief Getter qui renvoie le nom de la page
     *
     * \return nom
     */
@@ -31,23 +31,14 @@ string Page2::getNom(){
 
 void Page2::afficherPage(){
 	/**
-    * \fn operator<<(ostream &s, Page &p)
-    * \brief Operateur d'affichage de nom d'une page
-    *
-    * \param p Page
+    * \fn afficherPage()
+    * \brief Affichage d'une page
     */
 
 	cout<<nom;
 }
 
-list<PageMere*> Page2::getPageVoisine(){
-
-}
-
-void Page2::ajoutVoisine(std::list<PageMere*> voisine){
-
-}
-
-void Page2::afficherVoisines(){
-
-}
+// Fonction supplémentaires
+list<PageMere*> Page2::getPageVoisine(){}
+void Page2::ajoutVoisine(std::list<PageMere*> voisine){}
+void Page2::afficherVoisines(){}

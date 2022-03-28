@@ -5,7 +5,7 @@ using namespace std;
 Page1::Page1(string nom): PageMere(nom){
 	/**
     * \fn Page1(string nom)
-    * \brief Constructeur d'une page.
+    * \brief Constructeur d'une page
     *
     * \param nom 
     */
@@ -14,14 +14,14 @@ Page1::Page1(string nom): PageMere(nom){
 Page1::~Page1(){
 	/**
     * \fn ~Page1()
-    * \brief Destructeur d'une page.
+    * \brief Destructeur d'une page
     */
 }
 
 string Page1::getNom(){
 	/**
     * \fn getNom()
-    * \brief Getter qui renvoie le nom de la page.
+    * \brief Getter qui renvoie le nom de la page
     *
     * \return nom
     */
@@ -31,12 +31,8 @@ string Page1::getNom(){
 
 void Page1::afficherPage(){
     /**
-    * \fn operator <<(ostream &s, Page &p)
-    * \brief Operateur d'affichage de nom d'une page
-    *
-    * \param p Page
-    * 
-	* \return s
+    * \fn afficherPage()
+    * \brief Affichage d'une page
     */
 
 	cout<<getNom();
@@ -44,10 +40,10 @@ void Page1::afficherPage(){
 
 void Page1::ajoutVoisine(std::list<PageMere*> voisine){
 	/**
-    * \fn ajoutVoisine(std::vector<Page*> voisine)
-    * \brief Ajouter une voisine le tableau de Page.
+    * \fn ajoutVoisine(std::list<PageMere*> voisine)
+    * \brief Ajouter une liste de voisines la lise des pages
     *
-    * \param voisine liste de pages.
+    * \param voisine liste des pages voisines d'une page
     */
 
 	pageVoisine=voisine;
@@ -55,10 +51,10 @@ void Page1::ajoutVoisine(std::list<PageMere*> voisine){
 
 list<PageMere*> Page1::getPageVoisine(){
     /**
-    * \fn getPVoisine()
-    * \brief Renvoie la liste des pages directement accessible depuis la page.
+    * \fn getPageVoisine()
+    * \brief Renvoie la liste des pages directement accessible depuis la page
     * 
-	* \return s
+	* \return pageVoisine
     */
 
     return pageVoisine;
@@ -67,7 +63,7 @@ list<PageMere*> Page1::getPageVoisine(){
 void Page1::afficherVoisines(){
 	/**
     * \fn afficherVoisines()
-    * \brief Affiche toutes les voisines du page.
+    * \brief Affiche toutes les voisines d'une page
     */
 
     cout<<getNom()<<" : {";

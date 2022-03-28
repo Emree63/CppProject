@@ -5,7 +5,7 @@ using namespace std;
 PageMere::PageMere(string nom): nom(nom){
 	/**
     * \fn PageMere(string nom)
-    * \brief Constructeur d'une page mère.
+    * \brief Constructeur d'une page mère
     *
     * \param nom 
     */
@@ -14,21 +14,28 @@ PageMere::PageMere(string nom): nom(nom){
 PageMere::~PageMere(){
 	/**
     * \fn ~PageMere()
-    * \brief Destructeur d'une page mère.
+    * \brief Destructeur d'une page mère
     */
 }
 
 string PageMere::getNom(){
+	/**
+    * \fn getNom()
+    * \brief Getter qui renvoie le nom de la page
+    *
+    * \return nom
+    */
+
     return nom;
 }
 
 bool operator==(PageMere &p1, PageMere &p2){
     /**
-    * \fn operator==(Page &p1,Page &p2)
+    * \fn operator==(PageMere &p1,PageMere &p2)
     * \brief Comparaison entre deux pages
     *
-    * \param p1 Première Page.
-    * \param p2 Deuxième Page.
+    * \param p1 Première Page
+    * \param p2 Deuxième Page
     * 
     * \return Un booléen vrai ou faux
     */

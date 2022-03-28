@@ -1,8 +1,8 @@
 #ifndef PAGE3_HPP
 #define PAGE3_HPP
 #include "pageMere.hpp"
-#include "page1.hpp"
 
+// Definition de la classe Page Solution 3
 class Page3 : public PageMere{
     std::list<PageMere*> pageVoisine;
     public:

@@ -1,26 +1,30 @@
-#include<iostream>
 #include "reseau2.hpp"
-#include <iterator>
+#include<iostream>
 using namespace std;
 
 Reseau2::Reseau2(){
 	/**
-    * \fn Reseau()
-    * \brief Constructeur d'un réseau.
+    * \fn Reseau2()
+    * \brief Constructeur d'un réseau
     */
 }
 
 Reseau2::~Reseau2(){
+	/**
+    * \fn ~Reseau2()
+    * \brief Destructeur d'un réseau
+    */
+
     for(PageMere* p : pages)
         delete p;
 }
 
 void Reseau2::inserer(PageMere* p){
     /**
-    * \fn inserer(Page* p)
-    * \brief Inserer une Page dans la liste du Réseau.
+    * \fn inserer(PageMere* p)
+    * \brief Inserer une Page dans la liste du Réseau
     *
-    * \param p Page.
+    * \param p
     */
 
     pages.insert(pages.end(), p);
@@ -28,26 +32,27 @@ void Reseau2::inserer(PageMere* p){
 
 void Reseau2::insererHyperliens(PageMere* p1,PageMere* p2){
     /**
-    * \fn insererHyperliens(Page* p1,Page* p2)
-    * \brief Inserer un hyperliens dans la liste hyperliens du Réseau.
+    * \fn insererHyperliens(PageMere* p1,PageMere* p2)
+    * \brief Inserer un hyperliens dans la liste hyperliens du Réseau
     *
     * \param p1 Première Page.
     * \param p2 Deuxième Page.
     */
 
     typedef pair <PageMere*, PageMere*> p;
-    hyperliens.insert( p( p1, p2));
+    hyperliens.insert(p( p1, p2));
 }
 
 list<PageMere*> Reseau2::Voisin(PageMere *p){
     /**
-    * \fn Voisin(Page *p)
-    * \brief Recupere tout les pages voisines d'une page.
+    * \fn Voisin(PageMere *p)
+    * \brief Recupere tout les pages voisines d'une page
     *
-    * \param p Page.
+    * \param p
     * 
     * \return Liste des pages voisines
     */
+
     list<PageMere*> Voisin;
     for(pair<PageMere*, PageMere*> it : hyperliens)
     {
@@ -58,11 +63,9 @@ list<PageMere*> Reseau2::Voisin(PageMere *p){
 }
 
 void Reseau2::afficherReseau(){
-    /**
-    * \fn operator<<(ostream &s,Reseau &r)
-    * \brief Opérateur d'affichage du Réseau
-    *
-    * \param r Reseau.
+     /**
+    * \fn afficherReseau()
+    * \brief Affichage du Réseau
     */
 
     int i = 0;
@@ -94,15 +97,8 @@ void Reseau2::afficherReseau(){
     }
     cout<<"}"<<endl;
 }
-        
-vector<int> Reseau2::remplirLigne(PageMere *p){
 
-}
-
-void Reseau2::remplirMatrice(){
-
-}
-
-bool Reseau2::trouverDansPageVoisine(PageMere *p1, PageMere *p2){
-
-}
+// Fonction supplémentaires     
+vector<int> Reseau2::remplirLigne(PageMere *p){}
+void Reseau2::remplirMatrice(){}
+bool Reseau2::trouverDansPageVoisine(PageMere *p1, PageMere *p2){}

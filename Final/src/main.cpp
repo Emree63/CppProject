@@ -13,7 +13,6 @@ using namespace std;
 
 void Solution1(){
 	// Construction des pages
-
 	PageMere *p1 = new Page1("recettes.html");
 	PageMere *p2 = new Page1("ustencils.html");
 	PageMere *p3 = new Page1("ingredients.html");
@@ -28,7 +27,7 @@ void Solution1(){
 	PageMere *p12 = new Page1("foie.html");
 	PageMere *p13 = new Page1("réglisse.html");
 	
-	// Ajout des pages Voisine
+	// Ajout des pages voisines
 	std::list<PageMere*> pageVoisine1{p2, p3, p4, p7, p10};
 	p1->ajoutVoisine(pageVoisine1);
 
@@ -85,7 +84,9 @@ void Solution1(){
 	r1.inserer(p13);
 
 	// Affichage du réseau
+	cout<<"Affichage du réseau :"<<endl;
 	r1.afficherReseau();
+	cout<<"---------------------"<<endl;
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
@@ -96,7 +97,7 @@ void Solution1(){
 		p.first->afficherPage();
 		cout<<" ";
 	}
-	cout<<endl;
+	cout<<"---------------------"<<endl;
 }
 
 void Solution2(){
@@ -176,7 +177,9 @@ void Solution2(){
 	r2.insererHyperliens(p11,p10);
 
 	// Affichage du réseau
+	cout<<"Affichage du réseau :"<<endl;
 	r2.afficherReseau();
+	cout<<"---------------------"<<endl;
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
@@ -187,11 +190,11 @@ void Solution2(){
 		p.first->afficherPage();
 		cout<<" ";
 	}
-	cout<<endl;
+	cout<<"---------------------"<<endl;
 }
 
-void Solution3()
-{
+void Solution3(){
+	// Construction des pages
 	PageMere *p1 = new Page3("recettes.html");
 	PageMere *p2 = new Page3("ustencils.html");
 	PageMere *p3 = new Page3("ingredients.html");
@@ -206,7 +209,7 @@ void Solution3()
 	PageMere *p12 = new Page3("foie.html");
 	PageMere *p13 = new Page3("réglisse.html");
 
-	// Ajout des pages Voisine
+	// Ajout des pages voisines
 	std::list<PageMere*> pageVoisine1{p2, p3, p4, p7, p10};
 	p1->ajoutVoisine(pageVoisine1);
 
@@ -246,6 +249,7 @@ void Solution3()
 	std::list<PageMere*> pageVoisine13{};
 	p13->ajoutVoisine(pageVoisine13);
 
+	// Insertion des pages dans le réseau
     Reseau3 r3;
 	r3.inserer(p1);
 	r3.inserer(p2);
@@ -261,9 +265,13 @@ void Solution3()
 	r3.inserer(p12);
 	r3.inserer(p13);
 	
+	// Ajout dans la matrice
 	r3.remplirMatrice();
 
+	// Affichage du réseau
+	cout<<"Affichage du réseau :"<<endl;
     r3.afficherReseau();
+	cout<<"---------------------"<<endl;
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
@@ -274,7 +282,7 @@ void Solution3()
 		p.first->afficherPage();
 		cout<<" ";
 	}
-	cout<<endl;
+	cout<<"---------------------"<<endl;
 }
 
 int main()
@@ -287,5 +295,6 @@ int main()
 
 	cout<<endl<<"Solution 3 :"<<endl;
 	Solution3();
+	
 	return 0;
 }

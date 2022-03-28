@@ -1,8 +1,8 @@
 #ifndef RESEAU1_HPP
 #define RESEAU1_HPP
 #include "reseauMere.hpp"
-#include "page1.hpp"
 
+// Definition de la classe Reseau Solution 1
 class Reseau1 : public ReseauMere{
     public:
         Reseau1();

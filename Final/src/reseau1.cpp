@@ -1,5 +1,4 @@
 #include "reseau1.hpp"
-#include "pile.hpp"
 #include <iterator>
 #include<iostream>
 using namespace std;
@@ -7,21 +6,26 @@ using namespace std;
 Reseau1::Reseau1(){
 	/**
     * \fn Reseau1()
-    * \brief Constructeur d'un réseau.
+    * \brief Constructeur d'un réseau
     */
 }
 
 Reseau1::~Reseau1(){
+	/**
+    * \fn ~Reseau1()
+    * \brief Destructeur d'un réseau
+    */
+
     for(PageMere* p : pages)
         delete p;
 }
 
 void Reseau1::inserer(PageMere* p){
     /**
-    * \fn inserer(Page* p)
-    * \brief Inserer une Page dans la liste du Réseau.
+    * \fn inserer(PageMere* p)
+    * \brief Inserer une page dans la liste des pages du Réseau
     *
-    * \param p Page.
+    * \param p 
     */
 
     pages.insert(pages.end(), p);
@@ -29,29 +33,21 @@ void Reseau1::inserer(PageMere* p){
 
 list<PageMere*> Reseau1::Voisin(PageMere *p){
     /**
-    * \fn Voisin(Page *p)
-    * \brief Renvoie les pages voisines d'une page. .
+    * \fn Voisin(PageMere *p)
+    * \brief Renvoie les pages voisines d'une page
     *
-    * \param p Page.
+    * \param p
     * 
-    * \return p->getPVoisine()
+    * \return p->getPageVoisine()
     */
 
     return p->getPageVoisine();
 }
-void Reseau1::insererHyperliens(PageMere *p1,PageMere *p2){
-
-}
 
 void Reseau1::afficherReseau(){
     /**
-    * \fn operator<<(ostream &s,Reseau &r)
-    * \brief Opérateur d'affichage du Réseau .
-    *
-    * \param s 
-    * \param r Reseau.
-    * 
-    * \return s
+    * \fn afficherReseau()
+    * \brief Affichage du Réseau
     */
 
     cout<<"Page :{";
@@ -73,14 +69,8 @@ void Reseau1::afficherReseau(){
     }
 }
 
-vector<int> Reseau1::remplirLigne(PageMere *p){
-
-}
-
-void Reseau1::remplirMatrice(){
-
-}
-
-bool Reseau1::trouverDansPageVoisine(PageMere *p1, PageMere *p2){
-
-}
+// Fonction supplémentaires
+void Reseau1::insererHyperliens(PageMere *p1,PageMere *p2){}
+vector<int> Reseau1::remplirLigne(PageMere *p){}
+void Reseau1::remplirMatrice(){}
+bool Reseau1::trouverDansPageVoisine(PageMere *p1, PageMere *p2){}

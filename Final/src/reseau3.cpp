@@ -5,31 +5,39 @@
 using namespace std;
 
 Reseau3::Reseau3(){
-
+	/**
+    * \fn Reseau3()
+    * \brief Constructeur d'un réseau
+    */
 } 
 
 Reseau3::~Reseau3(){
+	/**
+    * \fn ~Reseau1()
+    * \brief Destructeur d'un réseau
+    */
+
     for(PageMere* p : pages)
         delete p;
 }
 
-void Reseau3::inserer(PageMere* p)
-{
+void Reseau3::inserer(PageMere* p){
     /**
-    * \fn inserer(Page* p)
-    * \brief Inserer une Page dans la liste du Réseau.
+    * \fn inserer(PageMere* p)
+    * \brief Inserer une page dans la liste des pages du Réseau
     *
-    * \param p Page.
+    * \param p 
     */
+
     pages.insert(pages.end(), p);
 }
 
 list<PageMere*> Reseau3::Voisin(PageMere *p){
     /**
-    * \fn Voisin(Page *p)
-    * \brief Renvoie les pages voisines d'une page. .
+    * \fn Voisin(PageMere *p)
+    * \brief Renvoie les pages voisines d'une page
     *
-    * \param p Page.
+    * \param p
     * 
     * \return p->getPageVoisine()
     */
@@ -37,17 +45,12 @@ list<PageMere*> Reseau3::Voisin(PageMere *p){
     return p->getPageVoisine();
 }
 
-void Reseau3::afficherReseau()
-{
+void Reseau3::afficherReseau(){
     /**
-    * \fn operator<<(ostream &s,Reseau &r)
-    * \brief Opérateur d'affichage de la matrice .
-    *
-    * \param s 
-    * \param r Reseau.
-    * 
-    * \return s
+    * \fn afficherReseau()
+    * \brief Affichage du Réseau
     */
+
     cout<<"Pages : {";
     int c=0;
     for (PageMere* p : pages){
@@ -77,8 +80,16 @@ void Reseau3::afficherReseau()
 }
 
 
-vector<int> Reseau3::remplirLigne(PageMere* p)
-{
+vector<int> Reseau3::remplirLigne(PageMere* p){
+    /**
+    * \fn remplirLigne(PageMere* p)
+    * \brief Rempli une ligne de la matrice
+    *
+    * \param p
+    * 
+    * \return ligne
+    */
+
     vector<int> ligne;
     for (PageMere* p1: pages) 
         {
@@ -89,10 +100,13 @@ vector<int> Reseau3::remplirLigne(PageMere* p)
             else ligne.push_back(0);
         }
     return ligne;
-
 }
 
-void Reseau3::remplirMatrice() {
+void Reseau3::remplirMatrice(){
+    /**
+    * \fn remplirMatrice()
+    * \brief Rempli toute la matrice à l'aide de ligne
+    */    
     for(PageMere* p: pages)
     {
         matrice.push_back(remplirLigne(p));
@@ -100,6 +114,15 @@ void Reseau3::remplirMatrice() {
 }
 
 bool Reseau3::trouverDansPageVoisine(PageMere* p1, PageMere* p2){
+    /**
+    * \fn trouverDansPageVoisine(PageMere* p1, PageMere* p2)
+    * \brief Cherche si p2 est dans les pages voisines de p1
+    *
+    * \param p1 Première page
+    * \param p2 Deuxième page
+    * 
+    * \return Un booléen Vrai ou Faux
+    */
     for(PageMere* p : p1->getPageVoisine())
     {
         if (p==p2)
@@ -108,6 +131,5 @@ bool Reseau3::trouverDansPageVoisine(PageMere* p1, PageMere* p2){
     return false;
 }
 
-void Reseau3::insererHyperliens(PageMere *p1,PageMere *p2){
-
-}
+// Fonction supplémentaires
+void Reseau3::insererHyperliens(PageMere *p1,PageMere *p2){}
