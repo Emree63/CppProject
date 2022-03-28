@@ -68,29 +68,29 @@ void Solution1(){
 	p13->ajoutVoisine(pageVoisine13);
 
 	// Insertion des pages dans le réseau
-	Reseau1 r1;
-	r1.inserer(p1);
-	r1.inserer(p2);
-	r1.inserer(p3);
-	r1.inserer(p4);
-	r1.inserer(p5);
-	r1.inserer(p6);
-	r1.inserer(p7);
-	r1.inserer(p8);
-	r1.inserer(p9);
-	r1.inserer(p10);
-	r1.inserer(p11);
-	r1.inserer(p12);
-	r1.inserer(p13);
+	ReseauMere *r1 = new Reseau1();
+	r1->inserer(p1);
+	r1->inserer(p2);
+	r1->inserer(p3);
+	r1->inserer(p4);
+	r1->inserer(p5);
+	r1->inserer(p6);
+	r1->inserer(p7);
+	r1->inserer(p8);
+	r1->inserer(p9);
+	r1->inserer(p10);
+	r1->inserer(p11);
+	r1->inserer(p12);
+	r1->inserer(p13);
 
 	// Affichage du réseau
 	cout<<"Affichage du réseau :"<<endl;
-	r1.afficherReseau();
+	r1->afficherReseau();
 	cout<<"---------------------"<<endl;
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
-	Accessible = r1.accessible(p11);
+	Accessible = r1->accessible(p11);
 	cout<<"Pages accessible depuis "<<p11->getNom()<<" : ";
 	for(pair<PageMere*,bool> p : Accessible)
 	{
@@ -117,73 +117,73 @@ void Solution2(){
 	PageMere *p13 = new Page2("réglisse.html");
 
 	// Insertion des pages dans le réseau
-	Reseau2 r2;
-	r2.inserer(p1);
-	r2.inserer(p2);
-	r2.inserer(p3);
-	r2.inserer(p4);
-	r2.inserer(p5);
-	r2.inserer(p6);
-	r2.inserer(p7);
-	r2.inserer(p8);
-	r2.inserer(p9);
-	r2.inserer(p10);
-	r2.inserer(p11);
-	r2.inserer(p12);
-	r2.inserer(p13);
+	ReseauMere *r2 = new Reseau2();
+	r2->inserer(p1);
+	r2->inserer(p2);
+	r2->inserer(p3);
+	r2->inserer(p4);
+	r2->inserer(p5);
+	r2->inserer(p6);
+	r2->inserer(p7);
+	r2->inserer(p8);
+	r2->inserer(p9);
+	r2->inserer(p10);
+	r2->inserer(p11);
+	r2->inserer(p12);
+	r2->inserer(p13);
 
 	// Insertion des hyperliens 
-	r2.insererHyperliens(p1,p2);
-	r2.insererHyperliens(p1,p3);
-	r2.insererHyperliens(p1,p4);
-	r2.insererHyperliens(p1,p7);
-	r2.insererHyperliens(p1,p10);
+	r2->insererHyperliens(p1,p2);
+	r2->insererHyperliens(p1,p3);
+	r2->insererHyperliens(p1,p4);
+	r2->insererHyperliens(p1,p7);
+	r2->insererHyperliens(p1,p10);
 
-	r2.insererHyperliens(p2,p3);
-	r2.insererHyperliens(p2,p5);
-	r2.insererHyperliens(p2,p8);
+	r2->insererHyperliens(p2,p3);
+	r2->insererHyperliens(p2,p5);
+	r2->insererHyperliens(p2,p8);
 
-	r2.insererHyperliens(p3,p1);
-	r2.insererHyperliens(p3,p6);
-	r2.insererHyperliens(p3,p9);
-	r2.insererHyperliens(p3,p11);
-	r2.insererHyperliens(p3,p12);
-	r2.insererHyperliens(p3,p13);
+	r2->insererHyperliens(p3,p1);
+	r2->insererHyperliens(p3,p6);
+	r2->insererHyperliens(p3,p9);
+	r2->insererHyperliens(p3,p11);
+	r2->insererHyperliens(p3,p12);
+	r2->insererHyperliens(p3,p13);
 
-	r2.insererHyperliens(p4,p1);
-	r2.insererHyperliens(p4,p5);
-	r2.insererHyperliens(p4,p6);
-	r2.insererHyperliens(p4,p8);
-	r2.insererHyperliens(p4,p9);
+	r2->insererHyperliens(p4,p1);
+	r2->insererHyperliens(p4,p5);
+	r2->insererHyperliens(p4,p6);
+	r2->insererHyperliens(p4,p8);
+	r2->insererHyperliens(p4,p9);
 
-	r2.insererHyperliens(p5,p2);
+	r2->insererHyperliens(p5,p2);
 
-	r2.insererHyperliens(p6,p4);
-	r2.insererHyperliens(p6,p7);
+	r2->insererHyperliens(p6,p4);
+	r2->insererHyperliens(p6,p7);
 
-	r2.insererHyperliens(p7,p6);
-	r2.insererHyperliens(p7,p8);
+	r2->insererHyperliens(p7,p6);
+	r2->insererHyperliens(p7,p8);
 
-	r2.insererHyperliens(p8,p2);
+	r2->insererHyperliens(p8,p2);
 
-	r2.insererHyperliens(p9,p4);
-	r2.insererHyperliens(p9,p10);
+	r2->insererHyperliens(p9,p4);
+	r2->insererHyperliens(p9,p10);
 
-	r2.insererHyperliens(p10,p1);
-	r2.insererHyperliens(p10,p5);
-	r2.insererHyperliens(p10,p9);
-	r2.insererHyperliens(p10,p11);
+	r2->insererHyperliens(p10,p1);
+	r2->insererHyperliens(p10,p5);
+	r2->insererHyperliens(p10,p9);
+	r2->insererHyperliens(p10,p11);
 
-	r2.insererHyperliens(p11,p10);
+	r2->insererHyperliens(p11,p10);
 
 	// Affichage du réseau
 	cout<<"Affichage du réseau :"<<endl;
-	r2.afficherReseau();
+	r2->afficherReseau();
 	cout<<"---------------------"<<endl;
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
-	Accessible = r2.accessible(p11);
+	Accessible = r2->accessible(p11);
 	cout<<"Pages accessible depuis "<<p11->getNom()<<" : ";
 	for(pair<PageMere*,bool> p : Accessible)
 	{
@@ -250,32 +250,32 @@ void Solution3(){
 	p13->ajoutVoisine(pageVoisine13);
 
 	// Insertion des pages dans le réseau
-    Reseau3 r3;
-	r3.inserer(p1);
-	r3.inserer(p2);
-	r3.inserer(p3);
-	r3.inserer(p4);
-	r3.inserer(p5);
-	r3.inserer(p6);
-	r3.inserer(p7);
-	r3.inserer(p8);
-	r3.inserer(p9);
-	r3.inserer(p10);
-	r3.inserer(p11);
-	r3.inserer(p12);
-	r3.inserer(p13);
+    ReseauMere *r3 = new Reseau3();
+	r3->inserer(p1);
+	r3->inserer(p2);
+	r3->inserer(p3);
+	r3->inserer(p4);
+	r3->inserer(p5);
+	r3->inserer(p6);
+	r3->inserer(p7);
+	r3->inserer(p8);
+	r3->inserer(p9);
+	r3->inserer(p10);
+	r3->inserer(p11);
+	r3->inserer(p12);
+	r3->inserer(p13);
 	
 	// Ajout dans la matrice
-	r3.remplirMatrice();
+	r3->remplirMatrice();
 
 	// Affichage du réseau
 	cout<<"Affichage du réseau :"<<endl;
-    r3.afficherReseau();
+    r3->afficherReseau();
 	cout<<"---------------------"<<endl;
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
-	Accessible = r3.accessible(p11);
+	Accessible = r3->accessible(p11);
 	cout<<"Pages accessible depuis "<<p11->getNom()<<" : ";
 	for(pair<PageMere*,bool> p : Accessible)
 	{

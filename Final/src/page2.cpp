@@ -18,26 +18,6 @@ Page2::~Page2(){
     */
 }
 
-string Page2::getNom(){	
-	/**
-    * \fn getNom()
-    * \brief Getter qui renvoie le nom de la page
-    *
-    * \return nom
-    */
-
-	return nom;
-}
-
-void Page2::afficherPage(){
-	/**
-    * \fn afficherPage()
-    * \brief Affichage d'une page
-    */
-
-	cout<<nom;
-}
-
 // Fonction supplémentaires
 list<PageMere*> Page2::getPageVoisine(){}
 void Page2::ajoutVoisine(std::list<PageMere*> voisine){}

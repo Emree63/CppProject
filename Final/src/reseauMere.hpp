@@ -16,7 +16,7 @@ class ReseauMere{
         ReseauMere();
         virtual ~ReseauMere();
         virtual std::list<PageMere*> Voisin(PageMere *p) = 0;
-        virtual void inserer(PageMere* p) = 0;
+        void inserer(PageMere* p);
         std::map<PageMere*,bool> accessible(PageMere* p);
         virtual void afficherReseau() = 0;
         virtual void insererHyperliens(PageMere *p1,PageMere *p2) = 0;

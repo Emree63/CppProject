@@ -19,17 +19,6 @@ Reseau2::~Reseau2(){
         delete p;
 }
 
-void Reseau2::inserer(PageMere* p){
-    /**
-    * \fn inserer(PageMere* p)
-    * \brief Inserer une Page dans la liste du Réseau
-    *
-    * \param p
-    */
-
-    pages.insert(pages.end(), p);
-}
-
 void Reseau2::insererHyperliens(PageMere* p1,PageMere* p2){
     /**
     * \fn insererHyperliens(PageMere* p1,PageMere* p2)

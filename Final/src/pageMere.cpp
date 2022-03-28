@@ -29,6 +29,15 @@ string PageMere::getNom(){
     return nom;
 }
 
+void PageMere::afficherPage(){
+    /**
+    * \fn afficherPage()
+    * \brief Affichage d'une page
+    */
+
+	cout<<getNom();
+}
+
 bool operator==(PageMere &p1, PageMere &p2){
     /**
     * \fn operator==(PageMere &p1,PageMere &p2)

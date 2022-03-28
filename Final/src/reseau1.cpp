@@ -20,17 +20,6 @@ Reseau1::~Reseau1(){
         delete p;
 }
 
-void Reseau1::inserer(PageMere* p){
-    /**
-    * \fn inserer(PageMere* p)
-    * \brief Inserer une page dans la liste des pages du Réseau
-    *
-    * \param p 
-    */
-
-    pages.insert(pages.end(), p);
-}
-
 list<PageMere*> Reseau1::Voisin(PageMere *p){
     /**
     * \fn Voisin(PageMere *p)

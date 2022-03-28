@@ -18,31 +18,6 @@ Page3::~Page3(){
     */
 }
 
-string Page3::getNom()
-{
-    /**
-    * \fn getNom()
-    * \brief Getter qui renvoie le nom de la page
-    *
-    * \return nom
-    */
-
-    return nom;
-}
-
-list<PageMere*> Page3::getPageVoisine()
-{ 
-    /**
-    * \fn getPageVoisine()
-    * \brief Renvoie la liste des pages directement accessible depuis la page
-    * 
-	* \return pageVoisine
-    */
-
-    return pageVoisine;
-}
-
-
 void Page3::ajoutVoisine(std::list<PageMere*> voisine)
 {
 	/**
@@ -54,15 +29,16 @@ void Page3::ajoutVoisine(std::list<PageMere*> voisine)
 
     pageVoisine=voisine;
 }
- 
-void Page3::afficherPage()
-{
+
+list<PageMere*> Page3::getPageVoisine(){
     /**
-    * \fn afficherPage()
-    * \brief Affichage d'une page
+    * \fn getPageVoisine()
+    * \brief Renvoie la liste des pages directement accessible depuis la page
+    * 
+	* \return pageVoisine
     */
 
-    cout<<getNom();
+    return pageVoisine;
 }
 
 void Page3::afficherVoisines()

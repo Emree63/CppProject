@@ -10,10 +10,10 @@ class PageMere{
         PageMere(std::string nom);
 	    ~PageMere();
         virtual std::string getNom();
-        virtual std::list<PageMere*> getPageVoisine();
-        virtual void afficherPage() = 0;
-        virtual void afficherVoisines();
-        virtual void ajoutVoisine(std::list<PageMere*> voisine);
+        virtual std::list<PageMere*> getPageVoisine() = 0;
+        virtual void afficherPage();
+        virtual void afficherVoisines() = 0;
+        virtual void ajoutVoisine(std::list<PageMere*> voisine) = 0;
         friend bool operator==(PageMere &p1, PageMere &p2);
 };
 

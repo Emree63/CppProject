@@ -8,7 +8,6 @@ class Reseau1 : public ReseauMere{
         Reseau1();
         ~Reseau1();
         std::list<PageMere*> Voisin(PageMere *p) override;
-        void inserer(PageMere* p) override;
         void afficherReseau() override;
         void insererHyperliens(PageMere *p1,PageMere *p2);
         std::vector<int> remplirLigne(PageMere *p);

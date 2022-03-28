@@ -41,3 +41,14 @@ map<PageMere*,bool> ReseauMere::accessible(PageMere* p){
     }
     return page_visite;
 }
+
+void ReseauMere::inserer(PageMere* p){
+    /**
+    * \fn inserer(PageMere* p)
+    * \brief Inserer une page dans la liste des pages du Réseau
+    *
+    * \param p 
+    */
+
+    pages.insert(pages.end(), p);
+}
