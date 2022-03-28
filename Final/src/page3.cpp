@@ -30,7 +30,7 @@ void Page3::ajoutVoisine(std::list<PageMere*> voisine)
     pageVoisine=voisine;
 }
 
-list<PageMere*> Page3::getPageVoisine(){
+list<PageMere*> Page3::getPageVoisine() const{
     /**
     * \fn getPageVoisine()
     * \brief Renvoie la liste des pages directement accessible depuis la page

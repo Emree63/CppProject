@@ -7,7 +7,7 @@ class Page2 : public PageMere{
     public:
         Page2(std::string nom);
         ~Page2();
-        std::list<PageMere*> getPageVoisine() override;
+        std::list<PageMere*> getPageVoisine() const override;
         void ajoutVoisine(std::list<PageMere*> voisine);
         void afficherVoisines();
 };

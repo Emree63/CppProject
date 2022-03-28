@@ -18,7 +18,7 @@ PageMere::~PageMere(){
     */
 }
 
-string PageMere::getNom(){
+string PageMere::getNom() {
 	/**
     * \fn getNom()
     * \brief Getter qui renvoie le nom de la page

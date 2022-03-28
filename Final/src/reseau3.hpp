@@ -12,7 +12,7 @@ class Reseau3 : public ReseauMere{
         std::vector<int> remplirLigne(PageMere *p);
         void remplirMatrice();
         bool trouverDansPageVoisine(PageMere *p1, PageMere *p2);
-        void afficherReseau() override;
+        void afficherReseau() const override;
         void insererHyperliens(PageMere *p1,PageMere *p2);
 };
 

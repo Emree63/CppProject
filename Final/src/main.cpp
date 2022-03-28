@@ -86,7 +86,7 @@ void Solution1(){
 	// Affichage du réseau
 	cout<<"Affichage du réseau :"<<endl;
 	r1->afficherReseau();
-	cout<<"---------------------"<<endl;
+	cout<<endl<<"--------------------------------------"<<endl;
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
@@ -97,7 +97,7 @@ void Solution1(){
 		p.first->afficherPage();
 		cout<<" ";
 	}
-	cout<<"---------------------"<<endl;
+	cout<<endl<<"--------------------------------------"<<endl;
 }
 
 void Solution2(){
@@ -179,7 +179,7 @@ void Solution2(){
 	// Affichage du réseau
 	cout<<"Affichage du réseau :"<<endl;
 	r2->afficherReseau();
-	cout<<"---------------------"<<endl;
+	cout<<endl<<"--------------------------------------"<<endl;
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
@@ -190,7 +190,7 @@ void Solution2(){
 		p.first->afficherPage();
 		cout<<" ";
 	}
-	cout<<"---------------------"<<endl;
+	cout<<endl<<"--------------------------------------"<<endl;
 }
 
 void Solution3(){
@@ -271,7 +271,7 @@ void Solution3(){
 	// Affichage du réseau
 	cout<<"Affichage du réseau :"<<endl;
     r3->afficherReseau();
-	cout<<"---------------------"<<endl;
+	cout<<endl<<"--------------------------------------"<<endl;
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
@@ -282,19 +282,21 @@ void Solution3(){
 		p.first->afficherPage();
 		cout<<" ";
 	}
-	cout<<"---------------------"<<endl;
+	cout<<endl<<"--------------------------------------"<<endl;
 }
 
 int main()
 {
-	cout<<endl<<"Solution 1 :"<<endl;
+	cout<<endl<<"////////////////////////////////////////////"<<endl<<"/////////\tSolution 1\t////////////"<<endl<<"////////////////////////////////////////////"<<endl<<endl;
 	Solution1();
+	cout<<endl;
 
-	cout<<endl<<"Solution 2 :"<<endl;
+	cout<<endl<<"////////////////////////////////////////////"<<endl<<"/////////\tSolution 2\t////////////"<<endl<<"////////////////////////////////////////////"<<endl<<endl;
 	Solution2();
+	cout<<endl;
 
-	cout<<endl<<"Solution 3 :"<<endl;
+cout<<endl<<"////////////////////////////////////////////"<<endl<<"/////////\tSolution 3\t////////////"<<endl<<"////////////////////////////////////////////"<<endl<<endl;
 	Solution3();
-	
+	cout<<endl;
 	return 0;
 }

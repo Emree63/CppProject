@@ -19,6 +19,6 @@ Page2::~Page2(){
 }
 
 // Fonction supplémentaires
-list<PageMere*> Page2::getPageVoisine(){}
+list<PageMere*> Page2::getPageVoisine() const{}
 void Page2::ajoutVoisine(std::list<PageMere*> voisine){}
 void Page2::afficherVoisines(){}

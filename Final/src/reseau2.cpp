@@ -51,13 +51,13 @@ list<PageMere*> Reseau2::Voisin(PageMere *p){
     return Voisin;
 }
 
-void Reseau2::afficherReseau(){
+void Reseau2::afficherReseau() const{
      /**
     * \fn afficherReseau()
     * \brief Affichage du Réseau
     */
 
-    int i = 0;
+    unsigned i = 0;
     cout<<"Page : {";
     for(PageMere* p1 : pages)
     {

@@ -29,7 +29,7 @@ void Page1::ajoutVoisine(std::list<PageMere*> voisine){
 	pageVoisine=voisine;
 }
 
-list<PageMere*> Page1::getPageVoisine(){
+list<PageMere*> Page1::getPageVoisine() const{
     /**
     * \fn getPageVoisine()
     * \brief Renvoie la liste des pages directement accessible depuis la page
@@ -40,7 +40,7 @@ list<PageMere*> Page1::getPageVoisine(){
     return pageVoisine;
 }
 
-void Page1::afficherVoisines(){
+void Page1::afficherVoisines() {
 	/**
     * \fn afficherVoisines()
     * \brief Affiche toutes les voisines d'une page

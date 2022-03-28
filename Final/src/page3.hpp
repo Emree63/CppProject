@@ -10,7 +10,7 @@ class Page3 : public PageMere{
         ~Page3();
         void ajoutVoisine(std::list<PageMere*> voisine) override;
         void afficherVoisines() override;
-        std::list<PageMere*> getPageVoisine() override;
+        std::list<PageMere*> getPageVoisine() const override;
 }; 
 
 #endif

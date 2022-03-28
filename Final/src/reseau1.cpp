@@ -33,7 +33,7 @@ list<PageMere*> Reseau1::Voisin(PageMere *p){
     return p->getPageVoisine();
 }
 
-void Reseau1::afficherReseau(){
+void Reseau1::afficherReseau() const{
     /**
     * \fn afficherReseau()
     * \brief Affichage du Réseau

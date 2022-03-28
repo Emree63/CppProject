@@ -34,7 +34,7 @@ list<PageMere*> Reseau3::Voisin(PageMere *p){
     return p->getPageVoisine();
 }
 
-void Reseau3::afficherReseau(){
+void Reseau3::afficherReseau() const{
     /**
     * \fn afficherReseau()
     * \brief Affichage du Réseau
@@ -55,9 +55,9 @@ void Reseau3::afficherReseau(){
     }
     cout<<"}"<<endl<<endl;
 
-    int i, j;
+    unsigned i, j;
     cout<<"\t";
-    for(int k=0; k<matrice.size(); k++)
+    for(unsigned k=0; k<matrice.size(); k++)
         cout<<"|"<<k;
     cout<<endl<<endl;
     for (i=0; i<matrice.size(); i++){

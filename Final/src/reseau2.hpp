@@ -10,7 +10,7 @@ class Reseau2 : public ReseauMere{
         ~Reseau2();
         std::list<PageMere*> Voisin(PageMere *p) override;
         void insererHyperliens(PageMere *p1,PageMere *p2);
-        void afficherReseau() override;
+        void afficherReseau() const override;
         std::vector<int> remplirLigne(PageMere *p);
         void remplirMatrice();
         bool trouverDansPageVoisine(PageMere *p1, PageMere *p2);
