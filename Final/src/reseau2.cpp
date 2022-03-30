@@ -42,13 +42,13 @@ list<PageMere*> Reseau2::Voisin(PageMere *p){
     * \return Liste des pages voisines
     */
 
-    list<PageMere*> Voisin;
-    for(pair<PageMere*, PageMere*> it : hyperliens)
+    list<PageMere*> voisin;
+    for(pair<PageMere*, PageMere*> page : hyperliens)
     {
-        if(*p==*it.first)
-            Voisin.push_back(it.second);
+        if(*p==*(page.first))
+            voisin.push_back(page.second);
     }
-    return Voisin;
+    return voisin;
 }
 
 void Reseau2::afficherReseau() const{

@@ -167,6 +167,16 @@ void Solution2(){
 
 	r2->insererHyperliens(p8,p2);
 
+	r2->insererHyperliens(p9, p4);
+	r2->insererHyperliens(p9, p10);
+
+	r2->insererHyperliens(p10, p1);
+	r2->insererHyperliens(p10, p5);
+	r2->insererHyperliens(p10, p9);
+	r2->insererHyperliens(p10, p11);
+	
+	r2->insererHyperliens(p11, p10);
+
 	r2->inserer(p4);
 	r2->inserer(p5);
 	r2->inserer(p6);
@@ -175,6 +185,7 @@ void Solution2(){
 	r2->inserer(p9);
 	r2->inserer(p10);
 	r2->inserer(p11);
+
 	// Affichage du réseau
 	cout<<"Affichage du réseau :"<<endl;
 	r2->afficherReseau();
