@@ -8,6 +8,7 @@
 #include "reseau2.hpp"
 #include "page3.hpp"
 #include "reseau3.hpp"
+#include <chrono>
 
 using namespace std;
 
@@ -166,16 +167,14 @@ void Solution2(){
 
 	r2->insererHyperliens(p8,p2);
 
-	r2->insererHyperliens(p9,p4);
-	r2->insererHyperliens(p9,p10);
-
-	r2->insererHyperliens(p10,p1);
-	r2->insererHyperliens(p10,p5);
-	r2->insererHyperliens(p10,p9);
-	r2->insererHyperliens(p10,p11);
-
-	r2->insererHyperliens(p11,p10);
-
+	r2->inserer(p4);
+	r2->inserer(p5);
+	r2->inserer(p6);
+	r2->inserer(p7);
+	r2->inserer(p8);
+	r2->inserer(p9);
+	r2->inserer(p10);
+	r2->inserer(p11);
 	// Affichage du réseau
 	cout<<"Affichage du réseau :"<<endl;
 	r2->afficherReseau();
@@ -287,16 +286,40 @@ void Solution3(){
 
 int main()
 {
+	using chrono::high_resolution_clock;
+	using chrono::duration_cast;
+	using chrono::duration;
+	using chrono::milliseconds;
+
 	cout<<endl<<"////////////////////////////////////////////"<<endl<<"/////////\tSolution 1\t////////////"<<endl<<"////////////////////////////////////////////"<<endl<<endl;
+	
+	auto t1 = high_resolution_clock::now();
 	Solution1();
+	auto t2 = high_resolution_clock::now();
+	duration<double, milli> tmp_ms = t2-t1;
+	cout<< tmp_ms.count() << "ms\n";
+
 	cout<<endl;
 
 	cout<<endl<<"////////////////////////////////////////////"<<endl<<"/////////\tSolution 2\t////////////"<<endl<<"////////////////////////////////////////////"<<endl<<endl;
+	
+	auto t3 = high_resolution_clock::now();
 	Solution2();
+	auto t4 = high_resolution_clock::now();
+	duration<double, milli> tmp_ms2 = t4-t3;
+	cout<< tmp_ms2.count() << "ms\n";
+
 	cout<<endl;
 
 cout<<endl<<"////////////////////////////////////////////"<<endl<<"/////////\tSolution 3\t////////////"<<endl<<"////////////////////////////////////////////"<<endl<<endl;
+	
+	auto t5 = high_resolution_clock::now();
 	Solution3();
+	auto t6 = high_resolution_clock::now();
+	duration<double, milli> tmp_ms3 = t6-t5;
+	cout<< tmp_ms3.count() << "ms\n";
+
 	cout<<endl;
+
 	return 0;
 }
