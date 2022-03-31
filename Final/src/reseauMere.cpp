@@ -5,6 +5,8 @@ ReseauMere::ReseauMere(){
 	/**
     * \fn ReseauMere()
     * \brief Constructeur d'un réseau
+    * 
+    * \author Noémie
     */
 }
 
@@ -12,6 +14,8 @@ ReseauMere::~ReseauMere(){
 	/**
     * \fn ~ReseauMere()
     * \brief Destructeur d'un réseau
+    * 
+    * \author Laurine
     */
 }
 
@@ -19,6 +23,8 @@ map<PageMere*,bool> ReseauMere::accessible(PageMere* p){
     /**
     * \fn accessible(PageMere* p)
     * \brief Algorithme d'accessibilité depuis une page
+    * 
+    * \author Loris
     *
     * \param p
     * 
@@ -46,6 +52,8 @@ void ReseauMere::inserer(PageMere* p){
     /**
     * \fn inserer(PageMere* p)
     * \brief Inserer une page dans la liste des pages du Réseau
+    * 
+    * \author Emre
     *
     * \param p 
     */

@@ -7,6 +7,8 @@ Reseau1::Reseau1(){
 	/**
     * \fn Reseau1()
     * \brief Constructeur d'un réseau
+    * 
+    * \author Loris
     */
 }
 
@@ -14,6 +16,8 @@ Reseau1::~Reseau1(){
 	/**
     * \fn ~Reseau1()
     * \brief Destructeur d'un réseau
+    * 
+    * \author Loris
     */
 
     for(PageMere* p : pages)
@@ -24,6 +28,8 @@ list<PageMere*> Reseau1::Voisin(PageMere *p){
     /**
     * \fn Voisin(PageMere *p)
     * \brief Renvoie les pages voisines d'une page
+    * 
+    * \author Loris
     *
     * \param p
     * 
@@ -37,6 +43,8 @@ void Reseau1::afficherReseau() const{
     /**
     * \fn afficherReseau()
     * \brief Affichage du Réseau
+    * 
+    * \author Loris
     */
 
     cout<<"Page :{";

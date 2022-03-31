@@ -13,6 +13,10 @@
 using namespace std;
 
 void Solution1(){
+	using chrono::high_resolution_clock;
+	using chrono::duration_cast;
+	using chrono::duration;
+	using chrono::milliseconds;
 	// Construction des pages
 	PageMere *p1 = new Page1("recettes.html");
 	PageMere *p2 = new Page1("ustencils.html");
@@ -91,17 +95,28 @@ void Solution1(){
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
-	Accessible = r1->accessible(p11);
-	cout<<"Pages accessible depuis "<<p11->getNom()<<" : ";
+
+	auto t1 = high_resolution_clock::now();
+	Accessible = r1->accessible(p3);
+	auto t2 = high_resolution_clock::now();
+	duration<double, milli> tmp_ms = t2-t1;
+	cout<< "Temps : " << tmp_ms.count() << "ms\n";
+
+	cout<<"Pages accessible depuis "<<p3->getNom()<<" : ";
 	for(pair<PageMere*,bool> p : Accessible)
 	{
 		p.first->afficherPage();
 		cout<<" ";
 	}
 	cout<<endl<<"--------------------------------------"<<endl;
+	
 }
 
 void Solution2(){
+	using chrono::high_resolution_clock;
+	using chrono::duration_cast;
+	using chrono::duration;
+	using chrono::milliseconds;
 	// Construction des pages
 	PageMere *p1 = new Page2("recettes.html");
 	PageMere *p2 = new Page2("ustencils.html");
@@ -193,8 +208,14 @@ void Solution2(){
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
-	Accessible = r2->accessible(p11);
-	cout<<"Pages accessible depuis "<<p11->getNom()<<" : ";
+
+	auto t1 = high_resolution_clock::now();
+	Accessible = r2->accessible(p3);
+	auto t2 = high_resolution_clock::now();
+	duration<double, milli> tmp_ms = t2-t1;
+	cout<< "Temps : " << tmp_ms.count() << "ms\n";
+
+	cout<<"Pages accessible depuis "<<p3->getNom()<<" : ";
 	for(pair<PageMere*,bool> p : Accessible)
 	{
 		p.first->afficherPage();
@@ -204,6 +225,10 @@ void Solution2(){
 }
 
 void Solution3(){
+	using chrono::high_resolution_clock;
+	using chrono::duration_cast;
+	using chrono::duration;
+	using chrono::milliseconds;
 	// Construction des pages
 	PageMere *p1 = new Page3("recettes.html");
 	PageMere *p2 = new Page3("ustencils.html");
@@ -285,8 +310,14 @@ void Solution3(){
 
 	// Affichage des pages accessible à partir d'une page
 	map <PageMere*,bool> Accessible;
-	Accessible = r3->accessible(p11);
-	cout<<"Pages accessible depuis "<<p11->getNom()<<" : ";
+
+	auto t1 = high_resolution_clock::now();
+	Accessible = r3->accessible(p3);
+	auto t2 = high_resolution_clock::now();
+	duration<double, milli> tmp_ms = t2-t1;
+	cout<< "Temps : " << tmp_ms.count() << "ms\n";
+
+	cout<<"Pages accessible depuis "<<p3->getNom()<<" : ";
 	for(pair<PageMere*,bool> p : Accessible)
 	{
 		p.first->afficherPage();
@@ -297,39 +328,23 @@ void Solution3(){
 
 int main()
 {
-	using chrono::high_resolution_clock;
-	using chrono::duration_cast;
-	using chrono::duration;
-	using chrono::milliseconds;
 
 	cout<<endl<<"////////////////////////////////////////////"<<endl<<"/////////\tSolution 1\t////////////"<<endl<<"////////////////////////////////////////////"<<endl<<endl;
 	
-	auto t1 = high_resolution_clock::now();
 	Solution1();
-	auto t2 = high_resolution_clock::now();
-	duration<double, milli> tmp_ms = t2-t1;
-	cout<< tmp_ms.count() << "ms\n";
 
 	cout<<endl;
 
 	cout<<endl<<"////////////////////////////////////////////"<<endl<<"/////////\tSolution 2\t////////////"<<endl<<"////////////////////////////////////////////"<<endl<<endl;
 	
-	auto t3 = high_resolution_clock::now();
 	Solution2();
-	auto t4 = high_resolution_clock::now();
-	duration<double, milli> tmp_ms2 = t4-t3;
-	cout<< tmp_ms2.count() << "ms\n";
 
 	cout<<endl;
 
-cout<<endl<<"////////////////////////////////////////////"<<endl<<"/////////\tSolution 3\t////////////"<<endl<<"////////////////////////////////////////////"<<endl<<endl;
-	
-	auto t5 = high_resolution_clock::now();
+	cout<<endl<<"////////////////////////////////////////////"<<endl<<"/////////\tSolution 3\t////////////"<<endl<<"////////////////////////////////////////////"<<endl<<endl;
+		
 	Solution3();
-	auto t6 = high_resolution_clock::now();
-	duration<double, milli> tmp_ms3 = t6-t5;
-	cout<< tmp_ms3.count() << "ms\n";
-
+	
 	cout<<endl;
 
 	return 0;

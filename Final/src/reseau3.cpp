@@ -8,6 +8,8 @@ Reseau3::Reseau3(){
 	/**
     * \fn Reseau3()
     * \brief Constructeur d'un réseau
+    * 
+    * \author Noémie & Laurine
     */
 } 
 
@@ -15,6 +17,8 @@ Reseau3::~Reseau3(){
 	/**
     * \fn ~Reseau1()
     * \brief Destructeur d'un réseau
+    * 
+    * \author Noémie & Laurine
     */
 
     for(PageMere* p : pages)
@@ -25,6 +29,8 @@ list<PageMere*> Reseau3::Voisin(PageMere *p){
     /**
     * \fn Voisin(PageMere *p)
     * \brief Renvoie les pages voisines d'une page
+    * 
+    * \author Noémie & Laurine
     *
     * \param p
     * 
@@ -38,6 +44,8 @@ void Reseau3::afficherReseau() const{
     /**
     * \fn afficherReseau()
     * \brief Affichage du Réseau
+    * 
+    * \author Noémie & Laurine
     */
 
     cout<<"Pages : {";
@@ -73,6 +81,8 @@ vector<int> Reseau3::remplirLigne(PageMere* p){
     /**
     * \fn remplirLigne(PageMere* p)
     * \brief Rempli une ligne de la matrice
+    * 
+    * \author Noémie & Laurine
     *
     * \param p
     * 
@@ -95,6 +105,8 @@ void Reseau3::remplirMatrice(){
     /**
     * \fn remplirMatrice()
     * \brief Rempli toute la matrice à l'aide de ligne
+    * 
+    * \author Noémie & Laurine
     */    
     for(PageMere* p: pages)
     {
@@ -106,6 +118,8 @@ bool Reseau3::trouverDansPageVoisine(PageMere* p1, PageMere* p2){
     /**
     * \fn trouverDansPageVoisine(PageMere* p1, PageMere* p2)
     * \brief Cherche si p2 est dans les pages voisines de p1
+    * 
+    * \author Noémie & Laurine
     *
     * \param p1 Première page
     * \param p2 Deuxième page

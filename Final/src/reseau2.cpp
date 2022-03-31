@@ -6,6 +6,8 @@ Reseau2::Reseau2(){
 	/**
     * \fn Reseau2()
     * \brief Constructeur d'un réseau
+    * 
+    * \author Emre
     */
 }
 
@@ -13,6 +15,8 @@ Reseau2::~Reseau2(){
 	/**
     * \fn ~Reseau2()
     * \brief Destructeur d'un réseau
+    * 
+    * \author Emre
     */
 
     for(PageMere* p : pages)
@@ -23,6 +27,8 @@ void Reseau2::insererHyperliens(PageMere* p1,PageMere* p2){
     /**
     * \fn insererHyperliens(PageMere* p1,PageMere* p2)
     * \brief Inserer un hyperliens dans la liste hyperliens du Réseau
+    * 
+    * \author Emre
     *
     * \param p1 Première Page.
     * \param p2 Deuxième Page.
@@ -36,6 +42,8 @@ list<PageMere*> Reseau2::Voisin(PageMere *p){
     /**
     * \fn Voisin(PageMere *p)
     * \brief Recupere tout les pages voisines d'une page
+    * 
+    * \author Loris
     *
     * \param p
     * 
@@ -55,6 +63,8 @@ void Reseau2::afficherReseau() const{
      /**
     * \fn afficherReseau()
     * \brief Affichage du Réseau
+    * 
+    * \author Emre
     */
 
     unsigned i = 0;
