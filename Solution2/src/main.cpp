@@ -87,7 +87,7 @@ int main()
 
 	// Affichage des pages accessible à partir d'une page
 	map <Page*,bool> Accessible;
-	Accessible = r1.accessible(&p13);
+	Accessible = r1.accessible(&p11);
 	for(pair<Page*,bool> p : Accessible)
 	{
 		cout<<*(p.first)<<" ";

@@ -1,0 +1,5 @@
+<map id="PageMere" name="PageMere">
+<area shape="rect" id="node2" href="$class_page1.html" title="Page1" alt="" coords="5,80,64,107"/>
+<area shape="rect" id="node3" href="$class_page2.html" title="Page2" alt="" coords="88,80,147,107"/>
+<area shape="rect" id="node4" href="$class_page3.html" title="Page3" alt="" coords="171,80,229,107"/>
+</map>
